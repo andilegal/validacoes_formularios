@@ -1,49 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Validando formularios</title>
+    <title>ViaCEP Webservice</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
+
+    <!-- Adicionando Javascript -->
   </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s6">
-              <!-- <i class="material-icons prefix">account_circle</i> -->
-              <input
-                id="icon_prefix"
-                type="text"
-                onkeyup="validaEmail(text)"
-                class="validate"
-              />
-              <label for="icon_prefix">Email</label>
-            </div>
-            <div class="input-field col s6">
-              <!-- <i class="material-icons prefix">phone</i> -->
-              <input
-                id="icon_telephone"
-                onkeyup="maskTel(event)"
-                type="tel"
-                class="validate"
-              />
-              <label for="icon_telephone">Telefone</label>
-            </div>
-            <div class="input-field col s6">
-              <!-- <i class="material-icons prefix">phone</i> -->
-              <input id="icon_cep" type="tel" class="validate" />
-              <label for="icon_cep">CEP</label>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
+
+  <body class="container">
+    <!-- Inicio do formulario -->
+    <form method="get" action=".">
+      <label
+        >Cep:
+        <input
+          name="cep"
+          type="text"
+          id="cep"
+          value=""
+          size="10"
+          maxlength="9"
+          onblur="pesquisacep(this.value);"/></label
+      ><br />
+      <label>Rua: <input name="rua" type="text" id="rua" size="60"/></label
+      ><br />
+      <label
+        >Bairro: <input name="bairro" type="text" id="bairro" size="40"/></label
+      ><br />
+      <label
+        >Cidade: <input name="cidade" type="text" id="cidade" size="40"/></label
+      ><br />
+      <label>Estado: <input name="uf" type="text" id="uf" size="2"/></label
+      ><br />
+      <label>IBGE: <input name="ibge" type="text" id="ibge" size="8"/></label
+      ><br />
+      <label
+        >Celular:
+        <input
+          id="icon_telephone"
+          onkeyup="maskTel(event)"
+          type="tel"
+          class="validate"
+      /></label>
+    </form>
+    <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 </html>
